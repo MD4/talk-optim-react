@@ -6,6 +6,12 @@ export default class ComposeInput extends PureComponent {
     value: '',
   };
 
+  constructor(props) {
+    super(props);
+    this.onChange = this.onChange.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this);
+  }
+
   onChange({ target: { value } }) {
     this.props.onComposeInputChanged(value);
     this.setState({ value });
@@ -33,8 +39,8 @@ export default class ComposeInput extends PureComponent {
         value={value}
         placeholder={'Type your message here, then press `return`'}
 
-        onKeyDown={this.onKeyDown.bind(this)}
-        onChange={this.onChange.bind(this)}
+        onKeyDown={this.onKeyDown}
+        onChange={this.onChange}
       />
     );
   }

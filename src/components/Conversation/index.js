@@ -1,11 +1,17 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, createRef } from 'react';
 import './index.css';
 import Message from '../Message';
 
 
 export default class Conversation extends PureComponent {
+
+  constructor(props) {
+    super(props);
+    this.conversationRef = createRef();
+  }
+
   scrollToEnd() {
-    this.node.scrollTop = this.node.scrollHeight;
+    this.conversationRef.current.scrollTop = this.conversationRef.current.scrollHeight;
   }
 
   componentDidUpdate({ messages }) {
@@ -20,7 +26,7 @@ export default class Conversation extends PureComponent {
     return (
       <div
         className="Conversation"
-        ref={node => (this.node = node)}
+        ref={this.conversationRef}
       >
         {
           messages.map(

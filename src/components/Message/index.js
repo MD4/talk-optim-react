@@ -9,13 +9,23 @@ const Date = ({ date }) => (
 );
 
 export default class Message extends PureComponent {
+  onClick() {
+    const { onMessageDelete, id } = this.props;
+    onMessageDelete(id);
+  }
+
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
+
   render() {
-    const { id, text, participant, date, mine, onMessageDelete } = this.props;
+    const { text, participant, date, mine } = this.props;
 
     return (
       <div
         className={`Message${mine ? ' mine' : ''}`}
-        onClick={() => onMessageDelete(id)}
+        onClick={this.onClick}
       >
         <div className="MessageContent">
           <Avatar {...participant} />
