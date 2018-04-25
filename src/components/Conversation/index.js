@@ -24,8 +24,9 @@ export default class Conversation extends PureComponent {
       >
         {
           messages.map(
-            message => (
+            (message, index) => (
               <Message
+                key={index}
                 onMessageDelete={onMessageDelete}
                 {...message}
               />
