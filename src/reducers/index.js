@@ -15,7 +15,7 @@ export const getInitialState = () => ({
           avatar: '/avatars/george.jpg',
         },
         mine: false,
-        text: 'Sais-tu la différence entre la coquetterie et la classe ?',
+        text: 'Connais-tu la différence entre la coquetterie et la classe ?',
         date: new Date(),
         id: `msg-${String(+new Date())}-2`,
       },
