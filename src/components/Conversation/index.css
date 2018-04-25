@@ -1,0 +1,9 @@
+.Conversation {
+    margin: 20px;
+    //overflow: auto;
+    overflow: hidden;
+}
+
+.Conversation:hover {
+    overflow: auto;
+}

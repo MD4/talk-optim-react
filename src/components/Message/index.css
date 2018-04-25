@@ -1,0 +1,68 @@
+@keyframes MessageAppear {
+    from {
+        opacity: 0;
+        transform: translate(20px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.Message {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.Message:hover {
+    cursor: pointer;
+    opacity: 0.66;
+}
+
+.Message .MessageContent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    max-width: 75%;
+}
+
+.Message .MessageText {
+    margin: 0 20px;
+    border-radius: 10px;
+    line-height: 20px;
+    padding: 20px 20px;
+    background-color: #EEEEEE;
+    animation-name: MessageAppear;
+    animation-duration: 100ms;
+}
+
+.Message .MessageMeta {
+    margin: 0 80px;
+    max-width: 75%;
+}
+
+.Message .Date {
+    color: gray;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.Message.mine {
+    align-items: flex-end;
+}
+
+.Message.mine .MessageContent {
+    flex-direction: row-reverse;
+}
+
+.Message.mine .MessageText {
+    color: white;
+    background-color: #1BC74E;
+}
+
+.Message.mine .MessageMeta {
+    text-align: right;
+    animation-name: MessageAppear;
+    animation-duration: 100ms;
+}
