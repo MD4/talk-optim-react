@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './index.css';
 
 import Conversation from '../Conversation';
 import ComposeInput from '../ComposeInput';
 
-class App extends Component {
+class App extends PureComponent {
   render() {
     const {
       conversation,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './index.css';
 import Avatar from '../Avatar';
 
@@ -8,7 +8,7 @@ const Date = ({ date }) => (
   </div>
 );
 
-export default class Message extends Component {
+export default class Message extends PureComponent {
   render() {
     const { id, text, participant, date, mine, onMessageDelete } = this.props;
 

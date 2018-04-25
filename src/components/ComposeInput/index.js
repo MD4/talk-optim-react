@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './index.css';
 
-export default class ComposeInput extends Component {
+export default class ComposeInput extends PureComponent {
   state = {
     value: '',
   };

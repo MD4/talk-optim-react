@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './index.css';
 
 const esotericlyComputeAvatarUrl = avatar => {
@@ -9,12 +9,7 @@ const esotericlyComputeAvatarUrl = avatar => {
   return avatar;
 };
 
-export default class Avatar extends Component {
-
-  shouldComponentUpdate(nextProps) {
-    return nextProps.avatar !== this.props.avatar;
-  }
-
+export default class Avatar extends PureComponent {
   render() {
     const { avatar } = this.props;
     const computedAvatar = esotericlyComputeAvatarUrl(avatar);

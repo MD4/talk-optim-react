@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './index.css';
 import Message from '../Message';
 
 
-export default class Conversation extends Component {
+export default class Conversation extends PureComponent {
   scrollToEnd() {
     this.node.scrollTop = this.node.scrollHeight;
   }
