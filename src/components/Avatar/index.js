@@ -10,6 +10,11 @@ const esotericlyComputeAvatarUrl = avatar => {
 };
 
 export default class Avatar extends Component {
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.avatar !== this.props.avatar;
+  }
+
   render() {
     const { avatar } = this.props;
     const computedAvatar = esotericlyComputeAvatarUrl(avatar);
